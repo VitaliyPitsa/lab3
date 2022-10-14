@@ -49,12 +49,7 @@ def display_trains(trains):
         print(line)
 
 def select_train(trains, nomer):
-    count = 0
-    result = []
-    for train in trains:
-        if train.get('nomer', '') == nomer:
-            count += 1
-            result.append(train)
+    result = [train for train in trains if train.get('nomer', '') == nomer]
     return result
 def main():
     trains = []
